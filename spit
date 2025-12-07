@@ -1,0 +1,52 @@
+def izracunaj_prosjek(lista_brojeva):
+    if len(lista_brojeva) == 0:
+        return 0 
+    sum=0
+    for broj in lista_brojeva:
+        suma += broj
+    prosjek = suma / len(lista_brojeva)
+    return prosjek
+lista_mjerenja = []
+print("Dobrodošli u alat za prosjek mjerenja!")
+while True:
+    print("\n" + "="*40)
+    print("--- Alat za Prosjek Mjerenja ---")
+    print(f"Trenutno u memoriji: {len(lista_mjerenja)} mjerenja")
+    print("="*40)
+    print("1. Unesi novo mjerenje (V)")
+    print("2. Izračunaj prosjek i obriši mjerenja")
+    print("3. Pregledaj sva spremljena mjerenja")
+    print("0. Izlaz")
+    print("-" * 40)
+    try:
+        opcija = int(input("Odaberi opciju (0-3): "))
+    except ValueError:
+        print("! GREŠKA: Molimo unesite brojčanu vrijednost (0, 1, 2 ili 3).")
+        continue  
+    if opcija == 1:
+        try:
+            vrijednost = input("Unesi vrijednost mjerenja (npr. 67): ")
+            lista_mjerenja.append(mjerenje)
+            print(f"Mjerenje {mjerenje:.2f} V uspješno dodano.")
+        except ValueError:
+            print("! GREŠKA: Neispravan unos. Molimo unesite ispravnu brojčanu vrijednost.")
+    elif opcija == 2:
+        if len(lista_mjerenja) == 0:
+            print("Nema spremljenih mjerenja za izračun.")
+        else:
+            prosjek = izracunaj_prosjek(lista_mjerenja)
+            print(f"\n REZULTAT")
+            print(f"Prosjek {len(lista_mjerenja)} mjerenja iznosi: {prosjek:.2f} V")
+            print(f"----------")
+            lista_mjerenja.clear()
+            print("Memorija mjerenja je obrisana.")
+    elif opcija == 3:
+        if len(lista_mjerenja) == 0:
+            print("Nema spremljenih mjerenja.")
+        else:
+            print(f"Spremljena mjerenja ({len(lista_mjerenja)}): {lista_mjerenja}")
+    elif opcija == 0:
+        print("Hvala na korištenju Alata za Prosjek Mjerenja. Doviđenja!")
+        break
+    else:
+        print("! GREŠKA: Opcija nije prepoznata. Molimo odaberite 0, 1, 2 ili 3.")
