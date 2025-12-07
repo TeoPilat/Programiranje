@@ -9,15 +9,12 @@ def izracunaj_prosjek(lista_brojeva):
 lista_mjerenja = []
 print("Dobrodošli u alat za prosjek mjerenja!")
 while True:
-    print("\n" + "="*40)
     print("--- Alat za Prosjek Mjerenja ---")
     print(f"Trenutno u memoriji: {len(lista_mjerenja)} mjerenja")
-    print("="*40)
     print("1. Unesi novo mjerenje (V)")
     print("2. Izračunaj prosjek i obriši mjerenja")
     print("3. Pregledaj sva spremljena mjerenja")
     print("0. Izlaz")
-    print("-" * 40)
     try:
         opcija = int(input("Odaberi opciju (0-3): "))
     except ValueError:
